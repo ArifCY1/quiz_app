@@ -4,7 +4,7 @@ from models import db, Quiz
 with app.app_context():
     db.create_all()
 
-    if Quiz.query.count() == 0:  # Sorular zaten eklenmişse tekrar ekleme
+    if Quiz.query.count() == 0:  
         questions = [
             Quiz(
                 question="Discord.py kütüphanesi ne için kullanılır?",
