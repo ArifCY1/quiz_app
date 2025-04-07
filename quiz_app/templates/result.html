@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% block title %}Sınav Sonucu{% endblock %}
+
+{% block content %}
+    <h2>{{ username }} Sınav Sonucu</h2>
+
+    {% if latest is defined and best is defined %}
+        <p>Son aldığın puan: <strong>{{ latest }}</strong></p>
+        <p>Senin en yüksek puanın: <strong>{{ best }}</strong></p>
+    {% elif last_score is defined and max_score is defined %}
+        <p>Son aldığın puan: <strong>{{ last_score }}</strong></p>
+        <p>Senin en yüksek puanın: <strong>{{ max_score }}</strong></p>
+    {% endif %}
+
+    <p>Genel en yüksek puan: <strong>{{ global_high_score }}</strong></p>
+
+    <a href="{{ url_for('quiz') }}">Sınavı Tekrarla</a>
+{% endblock %}

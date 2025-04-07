@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Anasayfa{% endblock %}
+
+{% block content %}
+    <h1>Python Quiz'e Hoş Geldin!</h1>
+    <form method="POST">
+        <label for="username">Kullanıcı adını gir:</label>
+        <input type="text" name="username" required>
+        <button type="submit">Sınava Başla</button>
+    </form>
+{% endblock %}

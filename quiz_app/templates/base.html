@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Python Quiz{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="{{ url_for('index') }}">Anasayfa</a>
+        </div>
+        <div class="nav-right">
+            {% if global_high_score is defined %}
+                <span>Genel En Yüksek Puan: {{ global_high_score }}</span> |
+            {% endif %}
+            {% if max_score is defined %}
+                <span>Senin En Yüksek Puanın: {{ max_score }}</span>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>Bu site Arif Cemil Yıldızer tarafından geliştirilmiştir. @2025</p>
+    </footer>
+</body>
+</html>
